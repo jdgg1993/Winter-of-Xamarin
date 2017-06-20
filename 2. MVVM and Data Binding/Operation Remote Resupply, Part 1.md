@@ -30,9 +30,11 @@ In this lab, you will learn how to:
 The following are required to complete this lab:
 
 - [Visual Studio Community 2017](https://www.visualstudio.com/vs/) or higher
-- A computer running Windows 10 that supports hardware emulation using Hyper-V. For more information, and for a list of requirements, see https://msdn.microsoft.com/en-us/library/mt228280.aspx. 
+- A computer running Windows 10 that supports hardware emulation using Hyper-V. For more information, and for a list of requirements, see https://msdn.microsoft.com/en-us/library/mt228280.aspx **OR** a mac running OS X El Capitan (10.11) or higher. 
 
-You won't be building the iOS version of the app during this event because doing so would require additional setup, including a Mac configured as a build host. However, you can build the iOS version separately if you would like. For more information about building Xamarim Forms iOS apps, see https://developer.xamarin.com/guides/ios/getting_started/installation/windows/.
+You won't be building the iOS version of the app during this event if you have a windows machine because doing so would require additional setup, including a Mac configured as a build host. However, you can build the iOS version separately if you would like. For more information about building Xamarim Forms iOS apps, see https://developer.xamarin.com/guides/ios/getting_started/installation/windows/.
+
+If you're doing this event on a Mac, you will be required to install the latest version of Xcode from the App Store to run iOS apps.
 
 ---
 
@@ -55,6 +57,8 @@ Estimated time to complete this lab: **45** minutes.
 ## Exercise 1: Configure Visual Studio 2017 for Xamarin Development ##
 
 If Visual Studio 2017 is already installed on your computer, it's important to make sure it is configured with the proper components and workloads to support Xamarin development. If it *isn't* installed, then you need to install it with the proper workloads. You can install the Community edition, which is free, or any other edition that you would like. The Community edition and other editions of Visual Studio 2017 can be downloaded from https://www.visualstudio.com/vs/.
+
+## Windows
 
 If Visual Studio is already installed, you can determine which components and workloads are installed by starting the Visual Studio installer. (An easy way to do that is to press the Windows key, type "installer," and select **Visual Studio Installer** from the menu. You can then click the **Modify** button to view a list of installed components.) If you are installing Visual Studio for the first time, the same UI allows you to select the component and workloads to installed. Here is what must be installed for you to complete this lab and subsequent labs. 
 
@@ -80,10 +84,16 @@ If Visual Studio is already installed, you can determine which components and wo
 
 Once these workloads and components are installed, you are ready to begin creating Xamarin Forms apps.
 
+## Mac
+
+Installing Visual Studio 2017 on Mac is fairly straight forward. Everything you need to begin developing Xamarin applications is checked by default. All you have to do is open the installer and navigate through the screens until everything is installed.
+
 <a name="Exercise2"></a>
 ## Exercise 2: Create a Xamarin Forms solution ##
 
 The first step in creating a cross-platform solution with Xamarin Forms is to provision a solution based on the Visual Studio 2017 Cross Platform App template. In this exercise, you will create a new Xamarin Forms solution using this template.
+
+## Windows
 
 1. Start Visual Studio 2017. Then use the **File** > **New** > **Project** command to create a new Cross Platform App (Xamarin) solution named "DroneLander."
 
@@ -99,11 +109,33 @@ The first step in creating a cross-platform solution with Xamarin Forms is to pr
 
 1. When prompted to choose platform requirements for the Universal Windows Platform project, accept the defaults and click **OK**. If you are then prompted to connect to a Mac, simply close the dialog.
 
-	- **NOTE** - if you are using Visual Studio on a Mac you will not be able to create or deploy a UWP project. You will not be prompted to choose platform requirements.
-
     ![Specifying UWP platform versions](Images/vs-target-platform.png)
 
     _Specifying UWP platform versions_
+
+## Mac
+
+1. Start Visual Studio 2017. Then use the **File** > **New Solution...** command to create a new Cross Platform App (Xamarin) solution named "DroneLander."
+
+1. In the "Multiplatform" section, select the **Blank Forms App** template. Then click **Next**.
+
+	![Creating a new Cross Platform App solution](Images/vs-mac-new-project.png)
+
+    _Creating a new Cross Platform App solution_
+
+1. Make sure **App Name** is "DroneLander", **Android**, **iOS** and **User XAML for user interface files** are selected, and select **Use Portable Class Library** as the "Shared Code." Then click **Next**.
+
+    ![Specifying Cross Platform App preferences](Images/vs-mac-select-blank-app.png)
+
+    _Specifying Cross Platform App preferences_
+
+1. Make sure **Project Name** and **Solution Name** are "DroneLander". Then click **Create**.
+
+    ![Specifying Cross Platform App preferences](Images/vs-mac-project-name.png)
+
+    _Specifying Cross Platform App preferences_
+
+## Both Windows and Mac
 
 1. Confirm that the solution appears in Solution Explorer and that it contains four projects:
 	
@@ -117,7 +149,7 @@ The first step in creating a cross-platform solution with Xamarin Forms is to pr
 	
 	_The generated solution_
 
-1. Right-click the **DroneLander.Android** project in Solution Explorer and select **Properties** from the context menu. Then click **Android Options**, uncheck the **Use Fast Deployment** box, and save your changes. This option, if enabled, sometimes causes problems with Android emulators in Hyper-V. 
+1. Right-click the **DroneLander.Android** project in Solution Explorer and select **Properties** (**Options** if you're on a Mac) from the context menu. Then click **Android Options** (**Android Build** on Mac), uncheck the **Use Fast Deployment** box, and save your changes. This option, if enabled, sometimes causes problems with Android emulators in Hyper-V. 
 
     ![Disabling fast deployment on Android](Images/disable-fast-deployment.png)
 
